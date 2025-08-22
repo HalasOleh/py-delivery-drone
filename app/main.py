@@ -9,16 +9,16 @@ class BaseRobot:
         self.weight = weight
         self.coords = coords or [0, 0]
 
-    def go_forward(self, step: int = 1) -> list:
+    def go_forward(self, step: int = 1) -> None:
         self.coords[1] += step
 
-    def go_back(self, step: int = 1) -> list:
+    def go_back(self, step: int = 1) -> None:
         self.coords[1] -= step
 
-    def go_right(self, step: int = 1) -> list:
+    def go_right(self, step: int = 1) -> None:
         self.coords[0] += step
 
-    def go_left(self, step: int = 1) -> list:
+    def go_left(self, step: int = 1) -> None:
         self.coords[0] -= step
 
     def get_info(self) -> str:
@@ -33,10 +33,10 @@ class FlyingRobot(BaseRobot):
             coords_p = coords if len(coords) == 3 else coords + [0]
         super().__init__(name, weight, coords=coords_p)
 
-    def go_up(self, step: int = 1) -> list:
+    def go_up(self, step: int = 1) -> None:
         self.coords[2] += step
 
-    def go_down(self, step: int = 1) -> list:
+    def go_down(self, step: int = 1) -> None:
         self.coords[2] -= step
 
 
